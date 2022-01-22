@@ -5,21 +5,21 @@
 class Cidr < Formula
   desc "CLI tool for checking IPs against CIDR blocks"
   homepage "https://clokwork.net/cidr/"
-  version "0.0.3"
+  version "0.0.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/clok/cidr/releases/download/v0.0.3/cidr_0.0.3_darwin_amd64.tar.gz"
-      sha256 "916ee3d481b020509f8709090d4ea560fe371f06bb38b4cf756d10b06e275bb6"
+    if Hardware::CPU.arm?
+      url "https://github.com/clok/cidr/releases/download/v0.0.5/cidr_0.0.5_darwin_arm64.tar.gz"
+      sha256 "106b7d1e1c38b63dcaa728a7b8bf8ed1e6a0a76786b252477cf1c491368e015d"
 
       def install
         bin.install "cidr"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/clok/cidr/releases/download/v0.0.3/cidr_0.0.3_darwin_arm64.tar.gz"
-      sha256 "511f981cd42e78aa5c8cd5be526eeb27cd1aff6def7532e73b48737d46628164"
+    if Hardware::CPU.intel?
+      url "https://github.com/clok/cidr/releases/download/v0.0.5/cidr_0.0.5_darwin_amd64.tar.gz"
+      sha256 "4d610484c133107dc9a6a8e67a5a5e8f2167a9e99397092cdfff93f38f618be3"
 
       def install
         bin.install "cidr"
@@ -28,25 +28,25 @@ class Cidr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/cidr/releases/download/v0.0.3/cidr_0.0.3_linux_arm64.tar.gz"
-      sha256 "b4966035cdff68f1c22b5e2e03fee4f61ff203aeae20656befa4eb755c49516e"
+    if Hardware::CPU.intel?
+      url "https://github.com/clok/cidr/releases/download/v0.0.5/cidr_0.0.5_linux_amd64.tar.gz"
+      sha256 "9a7238aa9dd8212d19dd1eab0496ae7592f2b73696d838d5ea4dda37f063749a"
 
       def install
         bin.install "cidr"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/cidr/releases/download/v0.0.3/cidr_0.0.3_linux_armv6.tar.gz"
-      sha256 "61c6a16fe20885fea50a2c2c9828bb069cf981c8d961d851a550f8badbe71716"
+      url "https://github.com/clok/cidr/releases/download/v0.0.5/cidr_0.0.5_linux_armv6.tar.gz"
+      sha256 "a1ab6c524df14041e3ad05a51f99a8eed866eeea0983b178f5e3a3048d2d3d9a"
 
       def install
         bin.install "cidr"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/clok/cidr/releases/download/v0.0.3/cidr_0.0.3_linux_amd64.tar.gz"
-      sha256 "3f0270644c05e79d3cde53a40db1af9610cea97b2acbc6ae08393611869f12e9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/clok/cidr/releases/download/v0.0.5/cidr_0.0.5_linux_arm64.tar.gz"
+      sha256 "cea3574333b52f69fb6c61365961d3aa8202448be2a9fcfb59b2d313c3668b76"
 
       def install
         bin.install "cidr"
